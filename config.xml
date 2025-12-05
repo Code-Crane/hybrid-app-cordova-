@@ -1,25 +1,41 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.codecrane.hybridapp"
-        version="1.0.0"
-        xmlns="http://www.w3.org/ns/widgets"
-        xmlns:cdv="http://cordova.apache.org/ns/1.0">
+        version="1.0.0"
+        xmlns="http://www.w3.org/ns/widgets"
+        xmlns:cdv="http://cordova.apache.org/ns/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <name>HybridApp</name>
-    <description>
-        Hybrid app using Cordova + Raspberry Pi backend + Gemini.
-    </description>
-    <author email="you@example.com" href="https://github.com/Code-Crane">
-        Code-Crane
-    </author>
+    <name>HybridApp</name>
 
-    <content src="index.html" />
+    <description>
+        Hybrid app using Cordova + Raspberry Pi backend + Gemini.
+    </description>
 
-    <access origin="*" />
-    <allow-navigation href="*" />
-    <allow-intent href="*" />
+    <author email="you@example.com" href="https://github.com/Code-Crane">
+        Code-Crane
+    </author>
 
-    <preference name="ScrollEnabled" value="false" />
-    <preference name="AndroidPersistentFileLocation" value="Compatibility" />
+    <!-- 앱이 처음 로드할 파일 -->
+    <content src="index.html" />
 
-    <plugin name="cordova-plugin-whitelist" spec="1.3.5" />
+    <!-- 외부 API 접근 허용 -->
+    <access origin="*" />
+    <allow-navigation href="*" />
+    <allow-intent href="*" />
+
+    <!-- Cordova 기본 설정 -->
+    <preference name="ScrollEnabled" value="false" />
+    <preference name="AndroidPersistentFileLocation" value="Compatibility" />
+
+    <!-- 🔥 Android WebView에서 http:// 요청 허용 -->
+    <preference name="AndroidInsecureFileModeEnabled" value="true" />
+    <edit-config file="app/src/main/AndroidManifest.xml"
+                 mode="merge"
+                 target="/manifest/application">
+        <application android:usesCleartextTraffic="true" />
+    </edit-config>
+
+    <!-- Whitelist 플러그인 필수 (외부 통신 허용) -->
+    <plugin name="cordova-plugin-whitelist" spec="1.3.5" />
+
 </widget>

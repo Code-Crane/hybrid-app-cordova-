@@ -4,7 +4,7 @@
   "displayName": "Schedule Parser App",
   "description": "AI 일정 파서 하이브리드 앱",
   "devDependencies": {
-    "cordova-android": "^12.0.1",
+    "cordova-android": "^14.0.1",
     "cordova-browser": "^7.0.0",
     "cordova-plugin-whitelist": "^1.3.5"
   },
