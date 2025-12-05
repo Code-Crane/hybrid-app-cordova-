@@ -1,34 +1,68 @@
-# Gradle files
+############################################################
+# Cordova / Hybrid Project Ignore Rules
+# Git 커밋에서 제외해야 하는 파일/폴더 목록
+############################################################
+
+##############################
+# 1. Core Cordova / Node Artifacts
+##############################
+/platforms/
+/plugins/
+/node_modules/
+/hooks/
+package-lock.json
+
+##############################
+# 2. Frontend Build Output
+##############################
+/www/
+
+##############################
+# 3. Android Build Artifacts & Settings
+##############################
+/platforms/android/build/
+/platforms/android/.gradle/
+/platforms/android/platform_www/
 .gradle/
 build/
-
-# Local configuration file (sdk path, etc)
-local.properties
-
-# Log/OS Files
-*.log
-
-# Android Studio generated files and folders
-captures/
-.externalNativeBuild/
-.cxx/
-*.aab
 *.apk
+*.aab
 output-metadata.json
 
-# IntelliJ
-*.iml
+##############################
+# Android Studio Local Configuration
+##############################
+local.properties
+
+##############################
+# Android Studio / IntelliJ Workspace Files
+##############################
 .idea/
+*.iml
 misc.xml
 deploymentTargetDropDown.xml
 render.experimental.xml
+captures/
+.externalNativeBuild/
+.cxx/
 
-# Keystore files
+##############################
+# Logs & Profiling
+##############################
+*.log
+*.hprof
+
+##############################
+# 4. Security / Credential Files (ABSOLUTE MUST IGNORE ⚠)
+##############################
 *.jks
 *.keystore
-
-# Google Services (e.g. APIs or Firebase)
 google-services.json
 
-# Android Profiling
-*.hprof
+##############################
+# 5. OS / Editor Junk Files
+##############################
+.DS_Store
+Thumbs.db
+npm-debug.log
+.vscode/
